@@ -4,10 +4,10 @@
 
 | Version | Supported |
 | ------- | --------- |
-| Latest release | :white_check_mark: |
-| Older releases | :x: |
+| 1.x (latest) | :white_check_mark: |
+| < 1.0 | :x: |
 
-Only the most recent version of LyricsMaker receives security fixes. Please update to the latest release before reporting an issue.
+LyricsMaker follows [Semantic Versioning](https://semver.org/) (`MAJOR.MINOR.PATCH`). Only the most recent release receives security fixes. You can find the current version in the app's title bar or in the `__version__` field at the top of `lrc_maker.py`. Please update to the latest release before reporting an issue.
 
 ## Reporting a Vulnerability
 
