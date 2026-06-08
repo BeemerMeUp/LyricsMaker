@@ -1,0 +1,3 @@
+# pygame-ce is the community edition with Python 3.14+ support
+pygame-ce>=2.5.0
+mutagen>=1.47.0
