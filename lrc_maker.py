@@ -61,7 +61,7 @@ def fmt_lrc(seconds: float) -> str:
 class LRCMaker:
     def __init__(self, root: tk.Tk):
         self.root = root
-        self.root.title("LRC Maker")
+        self.root.title("Lyrics Maker")
         self.root.geometry("960x740")
         self.root.configure(bg=C["bg"])
         self.root.resizable(True, True)
@@ -239,7 +239,7 @@ class LRCMaker:
 
         # Stamp button
         self.stamp_btn = tk.Button(
-            p, text="HOLD TO STAMP\nPress = start  •  Release = end + next line",
+            p, text="Press = start • Release = next line",
             bg=C["stamp_idle"], fg="white",
             activebackground=C["stamp_hot"],
             relief="flat", bd=0, padx=10, pady=18,
@@ -442,7 +442,7 @@ class LRCMaker:
         self._stamp_down = True
         self._stamp_start = self._pos()
         self.stamp_btn.config(bg=C["stamp_hot"],
-                               text="STAMPING…\nRelease to mark end + advance to next line")
+                               text="STAMPING…\nRelease to advance to next line")
 
     def _stamp_release(self, _event=None):
         if not self._stamp_down:
@@ -459,7 +459,7 @@ class LRCMaker:
             self._refresh_lines()
 
         self.stamp_btn.config(bg=C["stamp_idle"],
-                               text="HOLD TO STAMP\nPress = start  •  Release = end + next line")
+                               text="Press = start  •  Release = next line")
 
     def _on_space_press(self, event):
         # Skip if a text-entry widget has focus
