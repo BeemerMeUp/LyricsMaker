@@ -20,6 +20,8 @@ except ImportError:
     MUTAGEN_AVAILABLE = False
 
 
+__version__ = "1.0.0"
+
 SUPPORTED_FORMATS = (
     ".mp3", ".wav", ".ogg", ".flac", ".m4a", ".aac", ".wma", ".opus", ".mp4"
 )
@@ -61,7 +63,7 @@ def fmt_lrc(seconds: float) -> str:
 class LRCMaker:
     def __init__(self, root: tk.Tk):
         self.root = root
-        self.root.title("Lyrics Maker")
+        self.root.title(f"Lyrics Maker v{__version__}")
         self.root.geometry("960x740")
         self.root.configure(bg=C["bg"])
         self.root.resizable(True, True)
@@ -602,7 +604,7 @@ class LRCMaker:
             lines = []
             if self.audio_file:
                 lines.append(f"[ti:{Path(self.audio_file).stem}]")
-            lines.append("[by:LRC Maker]")
+            lines.append(f"[by:LRC Maker v{__version__}]")
             lines.append("")
             for start, _end, text in sorted(self.timed, key=lambda x: x[0]):
                 lines.append(f"[{fmt_lrc(start)}]{text}")
